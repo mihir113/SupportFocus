@@ -1,0 +1,30 @@
+{
+
+  "manifest_version": 2,
+  "name": "SupportFocus",
+  "author": "Mihir Jha",
+  "version": "1.0",
+
+  "description": "Oracle Internal Project: Assists Support Engineers to Add Updates to DSE Portal",
+  "homepage_url": "https://www.oracle.com",
+  "icons": {
+    "48": "icons/DSE.png"
+  },  
+  "update_url": "https://github.com/mihir113/SupportFocus/raw/master/update.json", 
+  "permissions": [
+    "activeTab",
+	"https://*/"
+  ],
+  
+  "browser_action": {
+    "default_icon": "icons/DSE.png",
+    "default_title": "DSEify",
+    "default_popup": "popup/updatesr.html"
+  },
+  "content_scripts": [
+  {
+    "matches": ["*://*.oracle.com/*"],
+    "js": ["view.js"]
+  }
+  ]
+}
